@@ -193,7 +193,11 @@ Error message and password prompt
 
 <li>RangeD2</li>
 
+<li>RangeD3</li>
+
 <li>Realtime Graph Update with Variable Change</li>
+
+<li>sine</li>
 
 </ul>
 </p>
@@ -10328,8 +10332,8 @@ Error message and password prompt
 <div created="20210325160128903" modified="20210325160128903" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210325155837835" modified="20210325162704567" title="$:/state/tab--1566815441">
-<pre>Example Usage</pre>
+<div created="20210325155837835" modified="20210326085521918" title="$:/state/tab--1566815441">
+<pre>Realtime Graph Update with Variable Change</pre>
 </div>
 <div created="20210325155702574" modified="20210325155702574" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -10346,7 +10350,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210326085321941" list="[[How to use]] $:/plugins/gt6796c/graph-tw5" modified="20210326085324147" title="$:/StoryList">
+<div created="20210326085321941" list="sine RangeD2 [[Realtime Graph Update with Variable Change]] $:/plugins/gt6796c/graph-tw5" modified="20210326090536700" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10575,10 +10579,13 @@ and
 
 &lt;&lt;tabs tabsList:&quot;[[Example Usage]] [[Graphing Data Tiddlers]] [[Realtime Graph Update with Variable Change]] &quot; &gt;&gt;</pre>
 </div>
-<div created="20210325160527316" modified="20210325162431604" title="RangeD2">
+<div created="20210325160527316" modified="20210326091011055" title="RangeD2">
 <pre>2</pre>
 </div>
-<div created="20210325160421366" modified="20210325162423926" tags="" title="Realtime Graph Update with Variable Change">
+<div created="20210326090340324" modified="20210326090344589" title="RangeD3">
+<pre>2</pre>
+</div>
+<div created="20210325160421366" modified="20210326090727388" tags="" title="Realtime Graph Update with Variable Change">
 <pre>Here showing an example graph of $$\displaystyle y= \frac{1}{x^n}$$
 The slider changes the value of 'n'
 
@@ -10615,7 +10622,35 @@ The variable is then put in the equation with some js math and a little TW magic
   &quot;&gt;&lt;/$graph&gt;
 &lt;/$list&gt;
 
-So the graph updates as we move the slider.</pre>
+So the graph updates as we move the slider.
+
+
+```
+&lt;$range tiddler=&quot;sine&quot; min=&quot;-0&quot; max=&quot;2&quot; default=&quot;2.5&quot; increment=&quot;.01&quot;/&gt; $$\sin x\times$$ {{sine}}
+
+&lt;$list filter=&quot;[{sine}]&quot;&gt;
+
+&lt;$graph color='blue' thickness='1' minX=&quot;0&quot; minY=&quot;-6&quot; maxY=&quot;6&quot; equation=&quot;
+5 * Math.sin(x*(parseFloat($tw.wiki.getTiddlerText('sine'))))
+    &quot;&gt;
+&lt;/$graph&gt;
+```
+
+Gives:
+
+
+&lt;$range tiddler=&quot;sine&quot; min=&quot;-0&quot; max=&quot;2&quot; default=&quot;2.5&quot; increment=&quot;.01&quot;/&gt; $$\sin x\times$$ {{sine}}
+
+&lt;$list filter=&quot;[{sine}]&quot;&gt;
+
+&lt;$graph color='blue' thickness='1' minX=&quot;0&quot; minY=&quot;-6&quot; maxY=&quot;6&quot; equation=&quot;
+5 * Math.sin(x*(parseFloat($tw.wiki.getTiddlerText('sine'))))
+    &quot;&gt;
+&lt;/$graph&gt;
+</pre>
+</div>
+<div created="20210326090415965" modified="20210326090851157" title="sine">
+<pre>2</pre>
 </div>
 
 

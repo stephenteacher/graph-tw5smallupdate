@@ -1,4 +1,4 @@
-This is a small update og graph-tw5 which adds some examples on the landing page.
+This is a small update of graph-tw5 which adds some examples on the landing page.
 
 Demo can be found here:
 

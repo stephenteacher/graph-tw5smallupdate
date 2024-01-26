@@ -1,3 +1,9 @@
+This is a small update og graph-tw5 which adds some examples on the landing page.
+
+Demo can be found here:
+
+https://stephenteacher.github.io/graph-tw5smallupdate/
+
 # graph-tw5
 
 # Simple Linear Graphing Library
